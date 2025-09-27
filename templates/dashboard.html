@@ -1,0 +1,67 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Trực quan hóa Dữ liệu Bán hàng</title>
+    <link rel="stylesheet" href="{% static 'dashboard/style.css' %}?v={{ static_version }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Hệ thống Trực quan hóa Dữ liệu Bán hàng</h1>
+            <p>Dashboard phân tích dữ liệu đơn hàng và khách hàng</p>
+        </header>
+
+        <nav class="nav-tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="Q1">Q1</button>
+                <button class="tab-btn" data-tab="Q2">Q2</button>
+                <button class="tab-btn" data-tab="Q3">Q3</button>
+                <button class="tab-btn" data-tab="Q4">Q4</button>
+                <button class="tab-btn" data-tab="Q5">Q5</button>
+                <button class="tab-btn" data-tab="Q6">Q6</button>
+                <button class="tab-btn" data-tab="Q7">Q7</button>
+                <button class="tab-btn" data-tab="Q8">Q8</button>
+                <button class="tab-btn" data-tab="Q9">Q9</button>
+                <button class="tab-btn" data-tab="Q10">Q10</button>
+                <button class="tab-btn" data-tab="Q11">Q11</button>
+                <button class="tab-btn" data-tab="Q12">Q12</button>
+            </div>
+        </nav>
+
+        <section class="chart-container">
+            <div id="chart"></div>
+            <div class="legend-container">
+                <div id="legend" class="legend"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="{% static 'js/utils.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q1.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q2.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q3.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q4.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q5.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q6.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q7.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q8.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q9.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q10.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q11.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/chart/Q12.js' %}?v={{ static_version }}"></script>
+    <script src="{% static 'js/app.js' %}?v={{ static_version }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initializeApp === 'function') {
+                initializeApp();
+            } else {
+                console.error('Không tìm thấy hàm initializeApp. Vui lòng kiểm tra lại các file JS.');
+            }
+        });
+    </script>
+</body>
+</html>
